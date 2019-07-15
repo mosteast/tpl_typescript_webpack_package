@@ -22,7 +22,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@types/d3": "^5.7.2",
-    "d3": "^5.9.7",
+    "lit-element": "^2.2.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
