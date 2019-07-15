@@ -11,9 +11,11 @@
     "build/"
   ],
   "scripts": {
+    "init": "npm i; cd test/manual; npm i",
     "start": "npx webpack-dev-server --open --config webpack.dev.js",
     "build": "rm -fr ./build/* && npx tsc",
     "test": "npx jest --coverage",
+    "test:manual": "cd test/manual; npm start",
     "pub": "npm version patch && npm publish --access public",
     "build_and_pub": "npm run build && npm run pub"
   },
