@@ -10,6 +10,7 @@
     "emitDecoratorMetadata": true
   },
   "exclude": [
+    "build.script.ts",
     "node_modules",
     "dist",
     "build",

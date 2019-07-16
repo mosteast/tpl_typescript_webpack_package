@@ -3,7 +3,7 @@ const json = require('./package.json')
 const shell = require('shelljs')
 
 const git_path = 'build/.git'
-const git_backup_path = './.git_tmp_backup'
+const git_backup_path = './tmp/.git_tmp_backup'
 shell.mv(git_path, git_backup_path)
 shell.exec(`rm -fr build/* && npx tsc`)
 shell.mv(git_backup_path, git_path)
