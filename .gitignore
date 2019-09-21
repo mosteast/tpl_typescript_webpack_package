@@ -1,6 +1,7 @@
 # Custom
 tmp/
 build/
+dist/
 
 # IDE
 .idea
