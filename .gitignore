@@ -3,6 +3,8 @@ tmp/
 build/
 dist/
 package-lock.json
+.env.json
+.DS_Store
 
 # IDE
 .idea
