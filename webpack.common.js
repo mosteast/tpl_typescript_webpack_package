@@ -1,67 +1,67 @@
-const Html = require('html-webpack-plugin');
+const Html = require('html-webpack-plugin')
 
 module.exports = {
-  entry        : './src/index.ts',
-  optimization : {
-    usedExports : true,
+  entry: './src/index.ts',
+  optimization: {
+    usedExports: true,
   },
-  output       : {
-    filename : "[hash].bundle.js",
-    path     : __dirname + "/dist",
+  output: {
+    filename: '[hash].bundle.js',
+    path: __dirname + '/dist',
   },
-  plugins      : [
+  plugins: [
     new Html({
-      template : './src/index.html',
-      minify   : {
-        removeComments            : true,
-        removeEmptyAttributes     : true,
-        removeOptionalTags        : true,
-        collapseBooleanAttributes : true,
-        collapseWhitespace        : true,
+      template: './src/index.html',
+      minify: {
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeOptionalTags: true,
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
       },
     }),
   ],
-  resolve      : {
-    extensions : [ '.tsx', '.ts', '.js' ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
-  module       : {
-    rules : [
+  module: {
+    rules: [
       {
-        test : /\.(png|jpg|jpeg|gif|svg)$/,
-        use  : [
+        test: /\.(png|jpg|jpeg|gif|svg|woff(2)?|ttf|eot)$/,
+        use: [
           {
-            loader : "file-loader",
+            loader: 'file-loader',
           },
         ],
       },
       {
-        test    : /\.tsx?$/,
-        use     : 'ts-loader',
-        exclude : /node_modules/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
-        test : /\.scss$/,
-        use  : [
+        test: /\.scss$/,
+        use: [
           {
-            loader : "style-loader",
+            loader: 'style-loader',
           }, {
-            loader : "css-loader",
+            loader: 'css-loader',
           }, {
-            loader : "sass-loader",
+            loader: 'sass-loader',
           },
         ],
       },
       {
-        test : /\.css$/,
-        use  : [
+        test: /\.css$/,
+        use: [
           {
-            loader : "style-loader",
+            loader: 'style-loader',
           }, {
-            loader : "css-loader",
+            loader: 'css-loader',
           },
         ],
       },
 
     ],
   },
-};
+}
