@@ -1,2 +1,1 @@
-export const yo = 'Yo'
-console.log(yo)
+import './component/yo-button'
