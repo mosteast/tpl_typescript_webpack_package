@@ -4,6 +4,7 @@ build/
 dist/
 package-lock.json
 .env.json
+.env
 .DS_Store
 
 # IDE
