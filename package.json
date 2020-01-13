@@ -12,7 +12,7 @@
   "scripts": {
     "init": "npm i; cd test/manual; npm i",
     "start": "npx webpack-dev-server --open --config webpack.dev.js",
-    "build": "ts-node build.script.ts",
+    "build": "./bin/build",
     "test": "npx jest --coverage",
     "test:manual": "cd test/manual; npm start",
     "release": "npm version patch && npm publish --access public",
