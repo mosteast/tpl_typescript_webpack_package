@@ -9,47 +9,47 @@ const r = dir_root
 run()
 
 async function run() {
-	prepare_environment()
-	backup_git()
-	compile()
-	copy_requirements()
-	edit_config()
+  prepare_environment()
+  backup_git()
+  compile()
+  copy_requirements()
+  edit_config()
 }
 
 function prepare_environment() {
-	process.env.NODE_ENV = 'production'
+  process.env.NODE_ENV = 'production'
 }
 
 function compile() {
-	ensureDirSync(b())
-	exec(`rm -fr ${b('*')}`)
-	exec(`npx webpack --config ${r('webpack.build.js')}`)
+  ensureDirSync(b())
+  exec(`rm -fr ${b('*')}`)
+  exec(`npx webpack --config "${r('webpack.build.js')}"`)
 }
 
 function copy_requirements() {
-	cp(r('readme.md'), b('readme.md'))
-	cp('-r', r('bin'), b('bin'))
+  cp(r('readme.md'), b('readme.md'))
+  cp('-r', r('bin'), b('bin'))
 }
 
 function edit_config() {
-	const json = require(r('./package.json'))
-	delete json.files
-	json.main = 'index.js'
-	json.type = 'index.d.ts'
-	writeFileSync(dir_root('build/package.json'), JSON.stringify(json), () => {})
+  const json = require(r('./package.json'))
+  delete json.files
+  json.main = 'index.js'
+  json.type = 'index.d.ts'
+  writeFileSync(dir_root('build/package.json'), JSON.stringify(json), () => {})
 }
 
 function backup_git() {
-	const tmp_path = r('tmp')
-	const git_path = b('.git')
-	const git_backup_path = `${tmp_path}/.git_tmp_backup`
+  const tmp_path = r('tmp')
+  const git_path = b('.git')
+  const git_backup_path = `${tmp_path}/.git_tmp_backup`
 
-	if (pathExistsSync(git_path)) {
-		mkdir('-p', tmp_path)
-		mv(git_path, git_backup_path)
-		mv(git_backup_path, git_path)
-		cp(r('.gitignore'), b('.gitignore'))
-	}
+  if (pathExistsSync(git_path)) {
+    mkdir('-p', tmp_path)
+    mv(git_path, git_backup_path)
+    mv(git_backup_path, git_path)
+    cp(r('.gitignore'), b('.gitignore'))
+  }
 }
 
 /**
@@ -58,5 +58,5 @@ function backup_git() {
  * @returns {string}
  */
 function b(...args) {
-	return r('build', ...args)
+  return r('build', ...args)
 }
