@@ -1,5 +1,6 @@
-import { yo } from '../src'
+import { LitElement } from 'lit-element';
+import { YoButton } from '../src/component/yo-button';
 
 test('Can yo', () => {
-  expect(yo).toBe('Yo')
-})
+  expect(YoButton).toBeInstanceOf(LitElement);
+});
