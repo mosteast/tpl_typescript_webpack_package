@@ -21,13 +21,13 @@
   "author": "Mosteast team",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.10.4",
-    "bootstrap": "^4.5.0",
-    "lit-element": "^2.3.1"
+    "@babel/polyfill": "^7.12.1",
+    "bootstrap": "^4.5.3",
+    "lit-element": "^2.4.0"
   },
   "devDependencies": {
     "@types/jest": "^24.9.1",
-    "@types/node": "^11.15.20",
+    "@types/node": "^11.15.35",
     "@types/shelljs": "^0.8.8",
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.1",
@@ -40,8 +40,8 @@
     "ts-jest": "^24.3.0",
     "ts-loader": "^5.4.5",
     "typescript": "^3.9.7",
-    "url-loader": "^4.1.0",
-    "webpack": "^4.44.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
